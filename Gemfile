@@ -11,6 +11,5 @@ group :test do
   gem 'capybara'
 end
 
-group :production do
-  # gem 'puma'
-end
+gem 'puma'
+gem 'slim'
