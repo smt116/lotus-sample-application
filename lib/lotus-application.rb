@@ -14,24 +14,16 @@ Lotus::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/lotus-application_development'
   #    adapter type: :sql, uri: 'mysql://localhost/lotus-application_development'
   #
-  adapter type: :file_system, uri: ENV['LOTUS_APPLICATION_DATABASE_URL']
+  adapter type: :sql, uri: "postgres://#{ENV['POSTGRESQL_USER']}:#{ENV['POSTGRESQL_PASSWORD']}@#{ENV['POSTGRESQL_HOST']}:5432/#{ENV['POSTGRESQL_DATABASE']}"
+
 
   ##
   # Database mapping
   #
   # You can specify mapping file to load with:
   #
-  # mapping "#{__dir__}/config/mapping"
+  mapping "#{__dir__}/config/mapping"
   #
   # Alternatively, you can use a block syntax like the following:
   #
-  mapping do
-    # collection :users do
-    #   entity     User
-    #   repository UserRepository
-    #
-    #   attribute :id,   Integer
-    #   attribute :name, String
-    # end
-  end
 end.load!

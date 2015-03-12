@@ -11,5 +11,8 @@ group :test do
   gem 'capybara'
 end
 
+gem 'pg'
+gem 'sequel'
+
 gem 'puma'
 gem 'slim'
