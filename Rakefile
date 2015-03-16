@@ -13,6 +13,11 @@ task spec: :test
 
 namespace :db do
   task :create do
+    system("psql -U #{ENV['POSTGRESQL_USER']} -d template1 -c 'CREATE DATABASE \"#{ENV['POSTGRESQL_DATABASE']}\";'")
+  end
+
+  task :drop do
+    system("psql -U #{ENV['POSTGRESQL_USER']} -d template1 -c 'DROP DATABASE \"#{ENV['POSTGRESQL_DATABASE']}\";'")
   end
 
   task :migrate do
