@@ -27,4 +27,7 @@ namespace :db do
   task seed: :migrate do
     load 'db/seeds.rb'
   end
+
+  task :setup do
+  end
 end
