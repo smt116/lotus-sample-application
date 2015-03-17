@@ -9,7 +9,7 @@ module Web::Controllers::Posts
 
       PostRepository.create(post)
 
-      redirect_to '/posts'
+      redirect_to '/'
     end
   end
 end
