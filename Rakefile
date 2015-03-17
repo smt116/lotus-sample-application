@@ -28,6 +28,10 @@ namespace :db do
     load 'db/seeds.rb'
   end
 
+  task :clean do
+    PostRepository.clear
+  end
+
   task :setup do
   end
 end
